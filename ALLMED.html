@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AllMed Doctors Directory</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#39E079", "background-light": "#f6f8f7", "background-dark": "#122017", "accent-orange": "#FFD3B6", "accent-purple": "#D9B3FF"}, fontFamily: {display: "Inter"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}}}};</script>
+<style>
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#101916] dark:text-[#e9f1ee] overflow-x-hidden min-h-screen flex flex-col">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 w-full border-b border-[#e9f1ee] dark:border-[#2a3833] bg-[#f9fbfa]/95 dark:bg-[#131f1a]/95 backdrop-blur-sm">
+<div class="px-4 md:px-10 lg:px-40 flex items-center justify-between py-3">
+<div class="flex items-center gap-4 text-[#101916] dark:text-white">
+<div class="size-8 text-primary">
+<span class="material-symbols-outlined text-3xl">medical_services</span>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-[-0.015em]">AllMed</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8 items-center">
+<nav class="flex items-center gap-9">
+<a class="text-[#101916] dark:text-[#e9f1ee] text-sm font-medium hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-[#101916] dark:text-[#e9f1ee] text-sm font-medium hover:text-primary transition-colors" href="#">Doctors</a>
+<a class="text-[#101916] dark:text-[#e9f1ee] text-sm font-medium hover:text-primary transition-colors" href="#">Services</a>
+<a class="text-[#101916] dark:text-[#e9f1ee] text-sm font-medium hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-gradient-to-r from-primary to-accent-purple text-[#101916] text-sm font-bold shadow-sm hover:shadow-md hover:brightness-105 transition-all">
+<span class="truncate">Book Appointment</span>
+</button>
+</div>
+<!-- Mobile Menu Icon -->
+<button class="md:hidden text-[#101916] dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-grow w-full px-4 md:px-10 lg:px-40 py-8">
+<div class="max-w-[1280px] mx-auto flex flex-col gap-8">
+<!-- Page Header Section -->
+<div class="flex flex-col gap-6">
+<!-- Headings -->
+<div class="flex flex-col gap-2">
+<h1 class="text-[#101916] dark:text-white text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em]">
+                        Find Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#5a8c79] to-accent-purple">Specialist</span>
+</h1>
+<p class="text-[#5a8c79] dark:text-[#8baea0] text-lg font-normal">Search and book appointments with top-rated doctors nearby.</p>
+</div>
+<!-- Search & Chips -->
+<div class="flex flex-col lg:flex-row gap-4 items-start lg:items-center justify-between">
+<div class="w-full lg:w-1/2 relative">
+<label class="flex items-center w-full h-12 rounded-xl bg-white dark:bg-[#1e2b26] border border-[#e9f1ee] dark:border-[#2a3833] focus-within:ring-2 focus-within:ring-primary focus-within:border-transparent transition-all shadow-sm overflow-hidden">
+<div class="flex items-center justify-center pl-4 text-[#5a8c79]">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="w-full h-full bg-transparent border-none focus:ring-0 text-[#101916] dark:text-white placeholder:text-[#9bbbb0] px-3" placeholder="Search doctors, clinics, or specialties..."/>
+</label>
+</div>
+<!-- Filter Chips -->
+<div class="flex gap-2 flex-wrap">
+<button class="flex h-9 items-center justify-center rounded-lg bg-primary/20 dark:bg-primary/10 border border-primary/20 px-4 text-sm font-medium text-[#101916] dark:text-[#e9f1ee] hover:bg-primary hover:border-primary transition-colors">
+                            Cardiology
+                        </button>
+<button class="flex h-9 items-center justify-center rounded-lg bg-white dark:bg-[#1e2b26] border border-[#e9f1ee] dark:border-[#2a3833] px-4 text-sm font-medium text-[#101916] dark:text-[#e9f1ee] hover:bg-[#e9f1ee] dark:hover:bg-[#2a3833] transition-colors">
+                            Pediatrics
+                        </button>
+<button class="flex h-9 items-center justify-center rounded-lg bg-white dark:bg-[#1e2b26] border border-[#e9f1ee] dark:border-[#2a3833] px-4 text-sm font-medium text-[#101916] dark:text-[#e9f1ee] hover:bg-[#e9f1ee] dark:hover:bg-[#2a3833] transition-colors">
+                            Dermatology
+                        </button>
+<button class="flex h-9 items-center justify-center rounded-lg bg-white dark:bg-[#1e2b26] border border-[#e9f1ee] dark:border-[#2a3833] px-4 text-sm font-medium text-[#101916] dark:text-[#e9f1ee] hover:bg-[#e9f1ee] dark:hover:bg-[#2a3833] transition-colors">
+                            Neurology
+                        </button>
+</div>
+</div>
+</div>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-4">
+<!-- Sidebar Filters (Left) -->
+<aside class="hidden lg:block lg:col-span-3 space-y-4">
+<div class="flex items-center justify-between pb-2">
+<h3 class="font-bold text-lg dark:text-white">Filters</h3>
+<button class="text-sm text-primary font-medium hover:underline">Reset</button>
+</div>
+<div class="flex flex-col gap-3">
+<details class="group flex flex-col rounded-xl border border-[#e9f1ee] dark:border-[#2a3833] bg-white dark:bg-[#1e2b26] overflow-hidden" open="">
+<summary class="flex cursor-pointer items-center justify-between gap-2 p-4 font-medium text-[#101916] dark:text-white hover:bg-[#f9fbfa] dark:hover:bg-[#25332e] transition-colors">
+<span>Specialization</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180 text-[#5a8c79]">expand_more</span>
+</summary>
+<div class="px-4 pb-4 pt-2 flex flex-col gap-2">
+<label class="flex items-center gap-3 cursor-pointer">
+<input checked="" class="rounded border-[#d3e3dd] text-primary focus:ring-primary dark:bg-[#131f1a] dark:border-[#2a3833]" type="checkbox"/>
+<span class="text-sm text-[#5a8c79] dark:text-[#a0c4b5]">General Practice</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="rounded border-[#d3e3dd] text-primary focus:ring-primary dark:bg-[#131f1a] dark:border-[#2a3833]" type="checkbox"/>
+<span class="text-sm text-[#5a8c79] dark:text-[#a0c4b5]">Dental Care</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="rounded border-[#d3e3dd] text-primary focus:ring-primary dark:bg-[#131f1a] dark:border-[#2a3833]" type="checkbox"/>
+<span class="text-sm text-[#5a8c79] dark:text-[#a0c4b5]">Neurology</span>
+</label>
+</div>
+</details>
+<details class="group flex flex-col rounded-xl border border-[#e9f1ee] dark:border-[#2a3833] bg-white dark:bg-[#1e2b26] overflow-hidden">
+<summary class="flex cursor-pointer items-center justify-between gap-2 p-4 font-medium text-[#101916] dark:text-white hover:bg-[#f9fbfa] dark:hover:bg-[#25332e] transition-colors">
+<span>Availability</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180 text-[#5a8c79]">expand_more</span>
+</summary>
+<div class="px-4 pb-4 pt-2 flex flex-col gap-2">
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="border-[#d3e3dd] text-primary focus:ring-primary dark:bg-[#131f1a] dark:border-[#2a3833]" name="availability" type="radio"/>
+<span class="text-sm text-[#5a8c79] dark:text-[#a0c4b5]">Today</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="border-[#d3e3dd] text-primary focus:ring-primary dark:bg-[#131f1a] dark:border-[#2a3833]" name="availability" type="radio"/>
+<span class="text-sm text-[#5a8c79] dark:text-[#a0c4b5]">Next 3 Days</span>
+</label>
+</div>
+</details>
+<details class="group flex flex-col rounded-xl border border-[#e9f1ee] dark:border-[#2a3833] bg-white dark:bg-[#1e2b26] overflow-hidden">
+<summary class="flex cursor-pointer items-center justify-between gap-2 p-4 font-medium text-[#101916] dark:text-white hover:bg-[#f9fbfa] dark:hover:bg-[#25332e] transition-colors">
+<span>Languages</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180 text-[#5a8c79]">expand_more</span>
+</summary>
+<div class="px-4 pb-4 pt-2 flex flex-col gap-2">
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="rounded border-[#d3e3dd] text-primary focus:ring-primary dark:bg-[#131f1a] dark:border-[#2a3833]" type="checkbox"/>
+<span class="text-sm text-[#5a8c79] dark:text-[#a0c4b5]">English</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="rounded border-[#d3e3dd] text-primary focus:ring-primary dark:bg-[#131f1a] dark:border-[#2a3833]" type="checkbox"/>
+<span class="text-sm text-[#5a8c79] dark:text-[#a0c4b5]">Spanish</span>
+</label>
+</div>
+</details>
+</div>
+<!-- Promo Card in Sidebar -->
+<div class="mt-6 rounded-xl bg-gradient-to-br from-accent-purple/20 to-primary/20 p-5 border border-primary/20">
+<div class="mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-white dark:bg-[#1e2b26] text-accent-purple shadow-sm">
+<span class="material-symbols-outlined">health_and_safety</span>
+</div>
+<h4 class="font-bold text-[#101916] dark:text-white">AllMed Plus</h4>
+<p class="mt-1 text-sm text-[#5a8c79] dark:text-[#a0c4b5]">Get priority booking and 24/7 support.</p>
+<button class="mt-3 text-sm font-bold text-primary hover:underline">Learn more</button>
+</div>
+</aside>
+<!-- Doctors Grid (Right) -->
+<div class="col-span-1 lg:col-span-9">
+<div class="flex items-center justify-between mb-4 lg:hidden">
+<button class="flex items-center gap-2 text-sm font-medium text-[#101916] dark:text-white bg-white dark:bg-[#1e2b26] px-4 py-2 rounded-lg shadow-sm border border-[#e9f1ee] dark:border-[#2a3833]">
+<span class="material-symbols-outlined text-lg">filter_list</span>
+                            Filters
+                        </button>
+<span class="text-sm text-[#5a8c79] dark:text-[#a0c4b5]">124 Doctors found</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Doctor Card 1 -->
+<div class="group flex flex-col rounded-2xl bg-white dark:bg-[#1e2b26] p-4 shadow-sm border border-[#e9f1ee] dark:border-[#2a3833] transition-all hover:-translate-y-1 hover:shadow-lg dark:hover:border-primary/30">
+<div class="relative mb-4 h-56 w-full overflow-hidden rounded-xl">
+<img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Portrait of a friendly male doctor smiling in a white coat" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb5JLrzyrEuVQlEV2DSm69IKRUlfpy6vfnr2Q8wb23TRZPrBn0GlgUpj-HLQXyGSMuTGpEYDnGGmXxVd77bb8W6nVinBjK3MTUdbGvcGPNRoEUd7Q1xrj_9d_4KqSM2XiXbh0XBQxcAW9mpet41mNcbdcp9V84qnEfO3NSDMf0u5mBgQ9jCdbFDhM2otB9L6EguQ_fiQxQi3yA7Cp-RzTBa1gZ1L7-pXBz3vLGbVDFFsIprbuDUhw9-6ag122fntE_A_ZFMnXtahY7"/>
+<div class="absolute top-3 right-3 flex items-center gap-1 rounded-full bg-white/95 dark:bg-[#131f1a]/90 backdrop-blur px-2.5 py-1 text-xs font-bold text-[#101916] dark:text-white shadow-sm">
+<span class="text-[#101916] dark:text-white">4.9</span>
+<span class="material-symbols-outlined text-[14px] text-accent-orange fill-current">star</span>
+</div>
+<div class="absolute bottom-3 left-3 rounded-full bg-accent-purple/90 backdrop-blur px-3 py-1 text-xs font-semibold text-white shadow-sm">
+                                    Top Rated
+                                </div>
+</div>
+<div class="mb-2">
+<span class="inline-block rounded-full bg-primary/20 dark:bg-primary/10 px-2.5 py-1 text-xs font-semibold text-[#2c5c4b] dark:text-primary">Cardiology</span>
+</div>
+<h3 class="text-lg font-bold text-[#101916] dark:text-white">Dr. Sarah Jenkins</h3>
+<p class="text-sm text-[#5a8c79] dark:text-[#8baea0]">MD, PhD • 12 years experience</p>
+<div class="mt-1 mb-4 flex items-center gap-1 text-xs text-[#5a8c79]/80 dark:text-[#8baea0]/80">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+<span>Central Hospital, New York</span>
+</div>
+<div class="mt-auto flex gap-3 pt-2">
+<button class="flex-1 rounded-lg border border-[#e9f1ee] dark:border-[#2a3833] py-2.5 text-sm font-semibold text-[#101916] dark:text-white hover:bg-[#f9fbfa] dark:hover:bg-[#25332e] transition-colors">Profile</button>
+<button class="flex-1 rounded-lg bg-gradient-to-r from-primary to-accent-purple py-2.5 text-sm font-bold text-[#101916] shadow-sm hover:opacity-90 transition-opacity">Book Now</button>
+</div>
+</div>
+<!-- Doctor Card 2 -->
+<div class="group flex flex-col rounded-2xl bg-white dark:bg-[#1e2b26] p-4 shadow-sm border border-[#e9f1ee] dark:border-[#2a3833] transition-all hover:-translate-y-1 hover:shadow-lg dark:hover:border-primary/30">
+<div class="relative mb-4 h-56 w-full overflow-hidden rounded-xl">
+<img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Female doctor with stethoscope listening attentively" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRBVQ0vYxD5dojI57trWWrtIYe_yNnDzXAeYaeYPEhQ281p8N3eCBGckimLHhaS2klBCDvIz5hmOHMhdf-e2pB4zApHIKn8drXjgLArnYel7bcoaV2zp_MeDACPV0X7cUoSs0QSrONCElSP3eCblekWOj9EZVg6uWy8zPqrISe9KiY9t4-gkfU6Ma0NOfNHxNKTzyRbwpWgCEly70pMLv-yTp2akzly4rDKPSswGWU4hBS1sCfIf27vLzUgY17xgu-UMV5unras0a4"/>
+<div class="absolute top-3 right-3 flex items-center gap-1 rounded-full bg-white/95 dark:bg-[#131f1a]/90 backdrop-blur px-2.5 py-1 text-xs font-bold text-[#101916] dark:text-white shadow-sm">
+<span class="text-[#101916] dark:text-white">4.8</span>
+<span class="material-symbols-outlined text-[14px] text-accent-orange fill-current">star</span>
+</div>
+</div>
+<div class="mb-2">
+<span class="inline-block rounded-full bg-accent-orange/30 px-2.5 py-1 text-xs font-semibold text-orange-800 dark:text-orange-200">Pediatrics</span>
+</div>
+<h3 class="text-lg font-bold text-[#101916] dark:text-white">Dr. James Wilson</h3>
+<p class="text-sm text-[#5a8c79] dark:text-[#8baea0]">MBBS, MD • 8 years experience</p>
+<div class="mt-1 mb-4 flex items-center gap-1 text-xs text-[#5a8c79]/80 dark:text-[#8baea0]/80">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+<span>Kids Care Clinic, Brooklyn</span>
+</div>
+<div class="mt-auto flex gap-3 pt-2">
+<button class="flex-1 rounded-lg border border-[#e9f1ee] dark:border-[#2a3833] py-2.5 text-sm font-semibold text-[#101916] dark:text-white hover:bg-[#f9fbfa] dark:hover:bg-[#25332e] transition-colors">Profile</button>
+<button class="flex-1 rounded-lg bg-gradient-to-r from-primary to-accent-purple py-2.5 text-sm font-bold text-[#101916] shadow-sm hover:opacity-90 transition-opacity">Book Now</button>
+</div>
+</div>
+<!-- Doctor Card 3 -->
+<div class="group flex flex-col rounded-2xl bg-white dark:bg-[#1e2b26] p-4 shadow-sm border border-[#e9f1ee] dark:border-[#2a3833] transition-all hover:-translate-y-1 hover:shadow-lg dark:hover:border-primary/30">
+<div class="relative mb-4 h-56 w-full overflow-hidden rounded-xl">
+<img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Close up shot of a confident young male doctor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy41qOW-z1tK5ZN-zkdwwwiyHAWHlDsn4gEw_OFGeVIiw335gLqiWAN-XLNAdlLq3L8fnC2WeBHYCnMzVu0MZEjB6iLWFpt6AsY9ausbko-5sLR92CxAdXMn-ILc5na3PbCHXGVfMhvCnZU5__qq9Mhn17op8YwD8BF8H7ehEpuMNfePY_wCRLlmuE0QPLvuDI8M9t3IsohYp3WWUuX5XmOQoF3zf7CCM3PGPnaIoFwofAVYPuLTjxIESh0Q6DTXzWWB8cXXmBiu-s"/>
+<div class="absolute top-3 right-3 flex items-center gap-1 rounded-full bg-white/95 dark:bg-[#131f1a]/90 backdrop-blur px-2.5 py-1 text-xs font-bold text-[#101916] dark:text-white shadow-sm">
+<span class="text-[#101916] dark:text-white">5.0</span>
+<span class="material-symbols-outlined text-[14px] text-accent-orange fill-current">star</span>
+</div>
+</div>
+<div class="mb-2">
+<span class="inline-block rounded-full bg-accent-purple/30 px-2.5 py-1 text-xs font-semibold text-purple-900 dark:text-purple-200">Dermatology</span>
+</div>
+<h3 class="text-lg font-bold text-[#101916] dark:text-white">Dr. Emily Chen</h3>
+<p class="text-sm text-[#5a8c79] dark:text-[#8baea0]">MD, FAAD • 15 years experience</p>
+<div class="mt-1 mb-4 flex items-center gap-1 text-xs text-[#5a8c79]/80 dark:text-[#8baea0]/80">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+<span>Skin Health Center, Manhattan</span>
+</div>
+<div class="mt-auto flex gap-3 pt-2">
+<button class="flex-1 rounded-lg border border-[#e9f1ee] dark:border-[#2a3833] py-2.5 text-sm font-semibold text-[#101916] dark:text-white hover:bg-[#f9fbfa] dark:hover:bg-[#25332e] transition-colors">Profile</button>
+<button class="flex-1 rounded-lg bg-gradient-to-r from-primary to-accent-purple py-2.5 text-sm font-bold text-[#101916] shadow-sm hover:opacity-90 transition-opacity">Book Now</button>
+</div>
+</div>
+<!-- Doctor Card 4 -->
+<div class="group flex flex-col rounded-2xl bg-white dark:bg-[#1e2b26] p-4 shadow-sm border border-[#e9f1ee] dark:border-[#2a3833] transition-all hover:-translate-y-1 hover:shadow-lg dark:hover:border-primary/30">
+<div class="relative mb-4 h-56 w-full overflow-hidden rounded-xl">
+<img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Older male doctor with glasses looking experienced and kind" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvHUM5oowD1wgcmM0aTNLque1ZEZhQAExSL9Tqwg6WimuA5nRiemK4JJwXuFx_JvJkIFjl8MegJbB8B9rEdVC9zmSsji6eOD852SbCuj7_nqgyHAPkkk-xGnUqF-biYSwoc8scEJ35rlz1OfnZE9cpx1BJmnvpMoc01KXxq_sqTHwragaGwmM14F4EsJ9dieJPvtYEPg9LKEnIP4x8C9zQREowMooe-M4wObETKmlE0WcjOc4atVU1fe16r8se8vDTWXUt2U1NtW-u"/>
+<div class="absolute top-3 right-3 flex items-center gap-1 rounded-full bg-white/95 dark:bg-[#131f1a]/90 backdrop-blur px-2.5 py-1 text-xs font-bold text-[#101916] dark:text-white shadow-sm">
+<span class="text-[#101916] dark:text-white">4.7</span>
+<span class="material-symbols-outlined text-[14px] text-accent-orange fill-current">star</span>
+</div>
+</div>
+<div class="mb-2">
+<span class="inline-block rounded-full bg-blue-100 dark:bg-blue-900/30 px-2.5 py-1 text-xs font-semibold text-blue-800 dark:text-blue-200">Neurology</span>
+</div>
+<h3 class="text-lg font-bold text-[#101916] dark:text-white">Dr. Robert Fox</h3>
+<p class="text-sm text-[#5a8c79] dark:text-[#8baea0]">PhD, Neuro • 20 years experience</p>
+<div class="mt-1 mb-4 flex items-center gap-1 text-xs text-[#5a8c79]/80 dark:text-[#8baea0]/80">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+<span>City Neuro Institute, Queens</span>
+</div>
+<div class="mt-auto flex gap-3 pt-2">
+<button class="flex-1 rounded-lg border border-[#e9f1ee] dark:border-[#2a3833] py-2.5 text-sm font-semibold text-[#101916] dark:text-white hover:bg-[#f9fbfa] dark:hover:bg-[#25332e] transition-colors">Profile</button>
+<button class="flex-1 rounded-lg bg-gradient-to-r from-primary to-accent-purple py-2.5 text-sm font-bold text-[#101916] shadow-sm hover:opacity-90 transition-opacity">Book Now</button>
+</div>
+</div>
+<!-- Doctor Card 5 -->
+<div class="group flex flex-col rounded-2xl bg-white dark:bg-[#1e2b26] p-4 shadow-sm border border-[#e9f1ee] dark:border-[#2a3833] transition-all hover:-translate-y-1 hover:shadow-lg dark:hover:border-primary/30">
+<div class="relative mb-4 h-56 w-full overflow-hidden rounded-xl">
+<img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Portrait of a professional female doctor in a clinic setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt5uM1NV2SrirDE9qoVazPB_PnmHBnBvjEUO-17GLSkg0LOJbsu7mhxEwjeHZUSdTdFMujIK0LXU02xlK4i6eP2MunHnXl7_6PViHfjWjWRSjaU3YTaS8Dh0SobP3HawI2-tt6ncIrTs-GN3LdiQQqBKkZL2WS9XLQ4ZpspkUxmHWo9orDFSdsAin5ggce61pwzi7xJ2LeuQN-IjOWlJSsBE6xN16cgMVswJnGCELnIoFDpOjthRjv7XapdBFNv6hyYvuXFxfaUJui"/>
+<div class="absolute top-3 right-3 flex items-center gap-1 rounded-full bg-white/95 dark:bg-[#131f1a]/90 backdrop-blur px-2.5 py-1 text-xs font-bold text-[#101916] dark:text-white shadow-sm">
+<span class="text-[#101916] dark:text-white">4.9</span>
+<span class="material-symbols-outlined text-[14px] text-accent-orange fill-current">star</span>
+</div>
+</div>
+<div class="mb-2">
+<span class="inline-block rounded-full bg-primary/20 dark:bg-primary/10 px-2.5 py-1 text-xs font-semibold text-[#2c5c4b] dark:text-primary">Cardiology</span>
+</div>
+<h3 class="text-lg font-bold text-[#101916] dark:text-white">Dr. Lisa Wong</h3>
+<p class="text-sm text-[#5a8c79] dark:text-[#8baea0]">MD, Surgery • 10 years experience</p>
+<div class="mt-1 mb-4 flex items-center gap-1 text-xs text-[#5a8c79]/80 dark:text-[#8baea0]/80">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+<span>Heart Center, Brooklyn</span>
+</div>
+<div class="mt-auto flex gap-3 pt-2">
+<button class="flex-1 rounded-lg border border-[#e9f1ee] dark:border-[#2a3833] py-2.5 text-sm font-semibold text-[#101916] dark:text-white hover:bg-[#f9fbfa] dark:hover:bg-[#25332e] transition-colors">Profile</button>
+<button class="flex-1 rounded-lg bg-gradient-to-r from-primary to-accent-purple py-2.5 text-sm font-bold text-[#101916] shadow-sm hover:opacity-90 transition-opacity">Book Now</button>
+</div>
+</div>
+<!-- Doctor Card 6 -->
+<div class="group flex flex-col rounded-2xl bg-white dark:bg-[#1e2b26] p-4 shadow-sm border border-[#e9f1ee] dark:border-[#2a3833] transition-all hover:-translate-y-1 hover:shadow-lg dark:hover:border-primary/30">
+<div class="relative mb-4 h-56 w-full overflow-hidden rounded-xl">
+<img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Friendly male doctor sitting at a desk with laptop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC27xssmSB3-g72_7FAUOjtqyZJAe_Uwatn4XDTEeAlnSOygHpfDTBsiE50EPT14rxeBKm3KfuhQe1d_bAcoN5ilow7cwPLixsyjdRUjUg0hmVwIiDobGzU2vWKcVC5R7ac7afjrJy6NHiX_jboFzrysksZN4NdxC9c1tAQ4DAuC2GpPu2eayHhHpqxeSlydI6Si0wkUnpRx92bTzrhxK-SwR8UyBsPphreOxKy084xY8OTsVx3kR7jssAruto0l_JMuP8m5h8JLJEj"/>
+<div class="absolute top-3 right-3 flex items-center gap-1 rounded-full bg-white/95 dark:bg-[#131f1a]/90 backdrop-blur px-2.5 py-1 text-xs font-bold text-[#101916] dark:text-white shadow-sm">
+<span class="text-[#101916] dark:text-white">4.6</span>
+<span class="material-symbols-outlined text-[14px] text-accent-orange fill-current">star</span>
+</div>
+</div>
+<div class="mb-2">
+<span class="inline-block rounded-full bg-accent-orange/30 px-2.5 py-1 text-xs font-semibold text-orange-800 dark:text-orange-200">Pediatrics</span>
+</div>
+<h3 class="text-lg font-bold text-[#101916] dark:text-white">Dr. Alan Grant</h3>
+<p class="text-sm text-[#5a8c79] dark:text-[#8baea0]">MD • 5 years experience</p>
+<div class="mt-1 mb-4 flex items-center gap-1 text-xs text-[#5a8c79]/80 dark:text-[#8baea0]/80">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+<span>Family Clinic, Staten Island</span>
+</div>
+<div class="mt-auto flex gap-3 pt-2">
+<button class="flex-1 rounded-lg border border-[#e9f1ee] dark:border-[#2a3833] py-2.5 text-sm font-semibold text-[#101916] dark:text-white hover:bg-[#f9fbfa] dark:hover:bg-[#25332e] transition-colors">Profile</button>
+<button class="flex-1 rounded-lg bg-gradient-to-r from-primary to-accent-purple py-2.5 text-sm font-bold text-[#101916] shadow-sm hover:opacity-90 transition-opacity">Book Now</button>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-10 flex justify-center">
+<nav class="flex items-center gap-2">
+<button class="flex size-10 items-center justify-center rounded-lg border border-[#e9f1ee] dark:border-[#2a3833] bg-white dark:bg-[#1e2b26] text-[#101916] dark:text-white hover:bg-[#f9fbfa] dark:hover:bg-[#25332e]">
+<span class="material-symbols-outlined text-lg">chevron_left</span>
+</button>
+<button class="flex size-10 items-center justify-center rounded-lg bg-primary text-[#101916] font-bold shadow-sm">1</button>
+<button class="flex size-10 items-center justify-center rounded-lg border border-[#e9f1ee] dark:border-[#2a3833] bg-white dark:bg-[#1e2b26] text-[#101916] dark:text-white hover:bg-[#f9fbfa] dark:hover:bg-[#25332e]">2</button>
+<button class="flex size-10 items-center justify-center rounded-lg border border-[#e9f1ee] dark:border-[#2a3833] bg-white dark:bg-[#1e2b26] text-[#101916] dark:text-white hover:bg-[#f9fbfa] dark:hover:bg-[#25332e]">3</button>
+<button class="flex size-10 items-center justify-center rounded-lg border border-[#e9f1ee] dark:border-[#2a3833] bg-white dark:bg-[#1e2b26] text-[#101916] dark:text-white hover:bg-[#f9fbfa] dark:hover:bg-[#25332e]">
+<span class="material-symbols-outlined text-lg">chevron_right</span>
+</button>
+</nav>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Simple Footer -->
+<footer class="mt-auto border-t border-[#e9f1ee] dark:border-[#2a3833] bg-white dark:bg-[#131f1a]">
+<div class="mx-auto max-w-[1280px] px-4 py-8 md:px-10 lg:px-40 flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-2">
+<div class="size-6 text-primary">
+<span class="material-symbols-outlined">medical_services</span>
+</div>
+<span class="text-lg font-bold text-[#101916] dark:text-white">AllMed</span>
+</div>
+<p class="text-sm text-[#5a8c79] dark:text-[#8baea0]">© 2024 AllMed Inc. All rights reserved.</p>
+<div class="flex gap-4">
+<a class="text-[#5a8c79] dark:text-[#8baea0] hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="text-[#5a8c79] dark:text-[#8baea0] hover:text-primary transition-colors" href="#">Terms</a>
+<a class="text-[#5a8c79] dark:text-[#8baea0] hover:text-primary transition-colors" href="#">Support</a>
+</div>
+</div>
+</footer>
+</body></html>
